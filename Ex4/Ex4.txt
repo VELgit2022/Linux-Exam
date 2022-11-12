@@ -1,0 +1,21 @@
+vg@vg-VirtualBox:~$ git clone https://github.com/VELgit2022/Linux-Exam.git
+Cloning into 'Linux-Exam'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+vg@vg-VirtualBox:~$ cd Linux-Exam
+vg@vg-VirtualBox:~/Linux-Exam$ mkdir Ex1 Ex2 Ex3 Ex4
+vg@vg-VirtualBox:~/Linux-Exam$ ls
+Ex1  Ex2  Ex3  Ex4  README.md
+vg@vg-VirtualBox:~/Linux-Exam$ cp ../Ex1.txt Ex1
+vg@vg-VirtualBox:~/Linux-Exam$ cp ../Ex2.txt Ex2
+vg@vg-VirtualBox:~/Linux-Exam$ cp ../Ex3.txt Ex3
+vg@vg-VirtualBox:~/Linux-Exam$ cp ../Ex4.txt Ex4
+vg@vg-VirtualBox:~/Linux-Exam$ git add --all
+vg@vg-VirtualBox:~/Linux-Exam$ git status
+vg@vg-VirtualBox:~/Linux-Exam$ git commit -m "Added Ex1,Ex2,Ex3,Ex4"
+vg@vg-VirtualBox:~/Linux-Exam$ git push
+
+
+

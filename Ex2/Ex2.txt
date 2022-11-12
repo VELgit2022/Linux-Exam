@@ -1,0 +1,36 @@
+vg@vg-VirtualBox:~$ sudo -i
+[sudo] password for vg:            
+root@vg-VirtualBox:~# adduser examuser
+Adding user `examuser' ...
+Adding new group `examuser' (1002) ...
+Adding new user `examuser' (1002) with group `examuser' ...
+Creating home directory `/home/examuser' ...
+Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for examuser
+Enter the new value, or press ENTER for the default
+	Full Name []: examuser
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] Y
+root@vg-VirtualBox:~# groupadd examgroup
+root@vg-VirtualBox:~# groupadd strypes
+root@vg-VirtualBox:~# usermod -a -G examgroup examuser
+root@vg-VirtualBox:~# usermod -a -G strypes  examuser
+root@vg-VirtualBox:~# groups examuser
+examuser : examuser examgroup strypes
+root@vg-VirtualBox:~# cp -v /etc/passwd /home/vg
+'/etc/passwd' -> '/home/vg/passwd'
+root@vg-VirtualBox:~# cd /home/vg
+root@vg-VirtualBox:/home/vg# chown examuser:strypes passwd
+root@vg-VirtualBox:/home/vg# ls -l passwd
+-rw-r--r-- 1 examuser strypes 2939 Nov 12 09:31 passwd
+root@vg-VirtualBox:/home/vg# chmod ug+x,o=w passwd
+root@vg-VirtualBox:/home/vg# chmod 752 passwd
+root@vg-VirtualBox:/home/vg# ls -l passwd
+-rwxr-x-w- 1 examuser strypes 2939 Nov 12 09:31 passwd
+root@vg-VirtualBox:/home/vg# 

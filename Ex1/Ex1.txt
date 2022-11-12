@@ -1,0 +1,61 @@
+vg@vg-VirtualBox:~$ mkdir 'Linux Exam'
+vg@vg-VirtualBox:~$ cd 'Linux Exam'
+vg@vg-VirtualBox:~/Linux Exam$ mkdir -p Files Strypes/{Day01,Day02}
+vg@vg-VirtualBox:~/Linux Exam$ cd Files
+vg@vg-VirtualBox:~/Linux Exam/Files$ touch doc{1..5}.txt report{1..5}.doc results{1..5}.doc statistics{1..2}.xls
+vg@vg-VirtualBox:~/Linux Exam/Files$ tree ../../'Linux Exam'
+../../Linux Exam
+├── Files
+│   ├── doc1.txt
+│   ├── doc2.txt
+│   ├── doc3.txt
+│   ├── doc4.txt
+│   ├── doc5.txt
+│   ├── report1.doc
+│   ├── report2.doc
+│   ├── report3.doc
+│   ├── report4.doc
+│   ├── report5.doc
+│   ├── results1.doc
+│   ├── results2.doc
+│   ├── results3.doc
+│   ├── results4.doc
+│   ├── results5.doc
+│   ├── statistics1.xls
+│   └── statistics2.xls
+└── Strypes
+    ├── Day01
+    └── Day02
+
+4 directories, 17 files
+vg@vg-VirtualBox:~/Linux Exam/Files$ cp -v *.txt ../Strypes/Day01
+'doc1.txt' -> '../Strypes/Day01/doc1.txt'
+'doc2.txt' -> '../Strypes/Day01/doc2.txt'
+'doc3.txt' -> '../Strypes/Day01/doc3.txt'
+'doc4.txt' -> '../Strypes/Day01/doc4.txt'
+'doc5.txt' -> '../Strypes/Day01/doc5.txt'
+vg@vg-VirtualBox:~/Linux Exam/Files$ mv *.doc ../Strypes/Day02
+vg@vg-VirtualBox:~/Linux Exam/Files$ mv -v statistics1.xls .statistics1.xls
+renamed 'statistics1.xls' -> '.statistics1.xls'
+vg@vg-VirtualBox:~/Linux Exam/Files$ cd ../Strypes
+vg@vg-VirtualBox:~/Linux Exam/Strypes$ rm -r Day02
+vg@vg-VirtualBox:~/Linux Exam/Strypes$ tree -a ../../'Linux Exam'
+../../Linux Exam
+├── Files
+│   ├── doc1.txt
+│   ├── doc2.txt
+│   ├── doc3.txt
+│   ├── doc4.txt
+│   ├── doc5.txt
+│   ├── .statistics1.xls
+│   └── statistics2.xls
+└── Strypes
+    └── Day01
+        ├── doc1.txt
+        ├── doc2.txt
+        ├── doc3.txt
+        ├── doc4.txt
+        └── doc5.txt
+
+3 directories, 12 files
+vg@vg-VirtualBox:~/Linux Exam/Strypes$ 

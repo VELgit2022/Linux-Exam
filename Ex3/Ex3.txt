@@ -1,0 +1,23 @@
+vg@vg-VirtualBox:~$ gedit Fruits.info
+vg@vg-VirtualBox:~$ cat Fruits.info | cut -d "#" -f 1 | sort
+Apple
+Avocado
+Blackberry
+Kiwi
+Raspberry
+Watermelon
+vg@vg-VirtualBox:~$ cat Fruits.info | sort -k 2 -t "#" -n
+Kiwi#4#4.50
+Watermelon#10#0.60
+Apple#29#2.40
+Raspberry#123#10.20
+Avocado#345#9.00
+Blackberry#456#12.34
+vg@vg-VirtualBox:~$ cat Fruits.info | sort -k 3 -t "#" -n | tail -n 1 |cut -d "#" -f 1 > fruit
+vg@vg-VirtualBox:~$ cat fruit
+Blackberry
+vg@vg-VirtualBox:~$ cat Fruits.info | sort -k 3 -t "#" -n | head -n 3
+Watermelon#10#0.60
+Apple#29#2.40
+Kiwi#4#4.50
+vg@vg-VirtualBox:~$ 
